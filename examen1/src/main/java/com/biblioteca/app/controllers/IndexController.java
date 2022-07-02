@@ -21,16 +21,29 @@ public class IndexController {
 	@Value("$(texto.indexcontroller.index.autores")
 	private String textoAutores;
 	
+	//Vista login
 	@GetMapping({"/"})
 	public String index(Model model){
 		 model.addAttribute("titulo","Sistema Web - Biblioteca G5");
 		 return "login";
 		}
+	
+	//Vista principal/index
+	@GetMapping({"/index","/home"})
+	public String principal(Model model){
+		 model.addAttribute("titulo","Sistema Web - Biblioteca G5");
+		 return "index";
+		}
+	
+	
+	//Vista Usuario
 	@RequestMapping("/usuario")
 	public String usuario(Model model) {
 		model.addAttribute("titulo","Usuario");
 		return "usuarios";
 	}
+	
+	// Vista prestamo
 	@Autowired
 	private Prestamo prestamo;
 	
