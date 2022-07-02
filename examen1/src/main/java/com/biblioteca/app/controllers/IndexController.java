@@ -23,4 +23,9 @@ public class IndexController {
 		 model.addAttribute("titulo","Sistema Web - Biblioteca G5");
 		 return "login";
 		}
+	@RequestMapping("/usuario")
+	public String usuario(Model model) {
+		model.addAttribute("titulo","Usuario");
+		return "usuarios";
+	}
 }
