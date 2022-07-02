@@ -3,18 +3,18 @@ package com.biblioteca.app.models;
 
 public class ItemsPrestamo {
 	
-	private Ejemplar codigo;
+	private Ejemplar ejemplar;
 	
 	private String fechaPrestamo;
 	
 	private String fechaDevolucion;
 
-	public Ejemplar getCodigo() {
-		return codigo;
+	public Ejemplar getEjemplar() {
+		return ejemplar;
 	}
 
-	public void setCodigo(Ejemplar codigo) {
-		this.codigo = codigo;
+	public void setEjemplar(Ejemplar ejemplar) {
+		this.ejemplar = ejemplar;
 	}
 
 	public String getFechaPrestamo() {
@@ -33,11 +33,13 @@ public class ItemsPrestamo {
 		this.fechaDevolucion = fechaDevolucion;
 	}
 
-	public ItemsPrestamo(Ejemplar codigo, String fechaPrestamo, String fechaDevolucion) {
-		this.codigo = codigo;
+	public ItemsPrestamo(Ejemplar ejemplar, String fechaPrestamo, String fechaDevolucion) {
+		super();
+		this.ejemplar = ejemplar;
 		this.fechaPrestamo = fechaPrestamo;
 		this.fechaDevolucion = fechaDevolucion;
 	}
+
 	
 	
 }

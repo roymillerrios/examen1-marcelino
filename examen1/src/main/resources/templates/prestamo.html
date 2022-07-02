@@ -11,26 +11,40 @@
 <div class="row">
 <div class="col-1"></div>
 <div class="col-10" style="margin-top:180px">
-	<h1 class="text-center">LOGIN</h1>
+	<h1 class="text-center">Lista de Prestamos</h1>
+	
+	<h3>Listado de prestamos:
+	<span th:text="${prestamo.usuario.Nombre}"></span>
+	</h3>
 	<table class="table">
 	  <thead>
 	    <tr>
-	      <th scope="col">Usuario</th>
 	      <th scope="col">Codigo</th>
+	      <th scope="col">Localizacion</th>
 	      <th scope="col">FechaPrestamo</th>
 	      <th scope="col">FechaDevolucion</th>
+		
 	    </tr>
 	  </thead>
 	  <tbody>
-	    <tr th:each="item:${itemsPrestamo.items}">
-	      <td th:text="item:${itemsPrestamo.codigo}"></td>
-	      <td th:text="item:${itemsPrestamo.fechaPrestamo}"></td>
-	      <td th:text="item:${itemsPrestamo.fechaDevolucion}"></td>
-	    </tr>
+	    <tr th:each="item:${prestamo.items}">
+	      <td th:text="${item.ejemplar.codigo}"></td>
+	      <td th:text="${item.ejemplar.localizacion}"></td>
+	      <td th:text="${item.fechaPrestamo}"></td>
+	      <td th:text="${item.fechaDevolucion}"></td>
+	    </tr>    
 	  </tbody>
 	</table>
+	<div class="text-center">
+		Total:
+		<span th:text="${prestamo.items.size()}"></span>
+	</div>
 </div>
 <div class="col-1"></div>
+</div>
+<br>
+<div class="text-center">
+				<input type="submit" value="Regresar" class="btn btn-success">			
 </div>
 </body>
 </html>
