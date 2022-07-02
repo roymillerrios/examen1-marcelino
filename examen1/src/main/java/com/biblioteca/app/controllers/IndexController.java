@@ -28,4 +28,9 @@ public class IndexController {
 		model.addAttribute("titulo","Usuario");
 		return "usuarios";
 	}
+	@RequestMapping("/prestamo")
+	public String prestamo(Model model) {
+		model.addAttribute("titulo","Prestamo");
+		return "prestamo";
+	}
 }

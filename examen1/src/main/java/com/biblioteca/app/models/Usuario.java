@@ -1,16 +1,29 @@
 package com.biblioteca.app.models;
 
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+
+@Component
 public class Usuario {
 	
+		@Value("${usuario.codigo}")
 		private String codigo;
+		@Value("${usuario.nombre}")
 		private String Nombre;
+		@Value("${usuario.direccion}")
 		private String direccion;
+		@Value("${usuario.telefono}")
 		private String telefono;
 		
+		public Usuario() {
+			
+		}
 		
 		public Usuario(String codigo, String nombre, String direccion, String telefono) {
 			this.codigo = codigo;
-			Nombre = nombre;
+			this.Nombre = nombre;
 			this.direccion = direccion;
 			this.telefono = telefono;
 		}
@@ -25,7 +38,7 @@ public class Usuario {
 			return Nombre;
 		}
 		public void setNombre(String nombre) {
-			Nombre = nombre;
+			this.Nombre = nombre;
 		}
 		public String getDireccion() {
 			return direccion;

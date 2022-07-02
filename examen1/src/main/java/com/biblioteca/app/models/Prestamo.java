@@ -1,29 +1,33 @@
 package com.biblioteca.app.models;
 
-import java.util.Date;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 
 public class Prestamo {
+	
+	@Autowired
+	private Usuario usuario;
+	
+	@Autowired
+	private List<ItemsPrestamo> items;
 
-	private Date fechaPrestamo;
-	private Date fechaDevolucion;
-	
-	public Prestamo(Date fechaPrestamo, Date fechaDevolucion) {
-		this.fechaPrestamo = fechaPrestamo;
-		this.fechaDevolucion = fechaDevolucion;
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+
+	public List<ItemsPrestamo> getItems() {
+		return items;
+	}
+
+	public void setItems(List<ItemsPrestamo> items) {
+		this.items = items;
 	}
 	
-	public Date getFechaPrestamo() {
-		return fechaPrestamo;
-	}
-	public void setFechaPrestamo(Date fechaPrestamo) {
-		this.fechaPrestamo = fechaPrestamo;
-	}
-	public Date getFechaDevolucion() {
-		return fechaDevolucion;
-	}
-	public void setFechaDevolucion(Date fechaDevolucion) {
-		this.fechaDevolucion = fechaDevolucion;
-	}
 	
 	
 }
