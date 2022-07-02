@@ -18,9 +18,9 @@ public class IndexController {
 	@Value("$(texto.indexcontroller.index.autores")
 	private String textoAutores;
 	
-	@GetMapping({"/index","/","/home"})
+	@GetMapping({"/"})
 	public String index(Model model){
 		 model.addAttribute("titulo","Sistema Web - Biblioteca G5");
-		 return "index";
+		 return "login";
 		}
 }
