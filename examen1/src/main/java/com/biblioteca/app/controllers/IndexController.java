@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class IndexController {
- //Este es un cambiooooOO
+ //Este es un cambiooooO
 	@Value("$(texto.indexcontroller.index.usuarios")
 	private String textoUsuarios;
 	@Value("$(texto.indexcontroller.index.libros")
