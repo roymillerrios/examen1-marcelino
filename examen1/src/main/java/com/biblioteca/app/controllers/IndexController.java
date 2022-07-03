@@ -31,13 +31,13 @@ public class IndexController {
 	@Value("$(texto.indexcontroller.index.autores")
 	private String textoAutores;
 	
-<<<<<<< HEAD
+
 	@Autowired
 	private UsuarioValidador validador;
 	
-=======
+
 	//Vista login
->>>>>>> branch 'main' of https://github.com/roymillerrios/examen1-marcelino
+
 	@GetMapping({"/"})
 	public String index(Model model){
 		Usuario usuario= new Usuario();
@@ -47,7 +47,7 @@ public class IndexController {
 		 
 		}
 	
-<<<<<<< HEAD
+
 	@PostMapping("/form")
 	public String procesar(@Valid Usuario usuario,BindingResult result,Model model,SessionStatus status){
 		
@@ -61,7 +61,7 @@ public class IndexController {
 		return "index";
 	}
 	
-=======
+
 	//Vista principal/index
 	@GetMapping({"/index","/home"})
 	public String principal(Model model){
@@ -71,7 +71,7 @@ public class IndexController {
 	
 	
 	//Vista Usuario
->>>>>>> branch 'main' of https://github.com/roymillerrios/examen1-marcelino
+
 	@RequestMapping("/usuario")
 	public String usuario(Model model) {
 		model.addAttribute("titulo","Usuario");
