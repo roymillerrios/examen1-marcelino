@@ -1,17 +1,26 @@
 package com.biblioteca.app.controllers;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.support.SessionStatus;
 
 import com.biblioteca.app.models.Prestamo;
+import com.biblioteca.app.models.Usuario;
+import com.biblioteca.app.validations.UsuarioValidador;
 
 @Controller
+@SessionAttributes("usuario")
 public class IndexController {
- //Este es otro cambio
+
 	@Value("$(texto.indexcontroller.index.usuarios")
 	private String textoUsuarios;
 	@Value("$(texto.indexcontroller.index.libros")
@@ -21,11 +30,31 @@ public class IndexController {
 	@Value("$(texto.indexcontroller.index.autores")
 	private String textoAutores;
 	
+	@Autowired
+	private UsuarioValidador validador;
+	
 	@GetMapping({"/"})
 	public String index(Model model){
+		Usuario usuario= new Usuario();
 		 model.addAttribute("titulo","Sistema Web - Biblioteca G5");
+		 model.addAttribute("usuario",usuario);
 		 return "login";
+		 
 		}
+	
+	@PostMapping("/form")
+	public String procesar(@Valid Usuario usuario,BindingResult result,Model model,SessionStatus status){
+		
+		validador.validate(usuario,result);
+		model.addAttribute("titulo","Resultado Form");
+		if(result.hasErrors()) {
+			return "login";
+		}
+		model.addAttribute("usuario",usuario);
+		status.setComplete();
+		return "index";
+	}
+	
 	@RequestMapping("/usuario")
 	public String usuario(Model model) {
 		model.addAttribute("titulo","Usuario");
