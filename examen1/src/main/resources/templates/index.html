@@ -6,13 +6,21 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 <title th:text="${titulo}">Más titulo pe</title>
 </head>
-<body>
+<body style="height:100vh; box-sizing:border-box; display:flex; justify-content: center; align-items: center;">
 
+	<div style="position: relative; transform:translateY(-50%)">
 	<h1 th:text="${titulo}"></h1>
-	<ul>
+	<label>Datos de usuario ingresado</label>
+	<ul style="list-style:none;">
 		<li th:text="${usuario.email}"></li>
 		<li th:text="${usuario.password}"></li>
 	</ul>
+	
+	<input type="submit" value="Ver libros" class="btn btn-info" onclick="location.href='/ficha';">
+	<input type="submit" value="Ver prestamos" class="btn btn-warning" onclick="location.href='/prestamo';">
+	<input type="submit" value="Salir" class="btn btn-danger" onclick="location.href='/';">
+	</div>
+	
 
 
 </body>

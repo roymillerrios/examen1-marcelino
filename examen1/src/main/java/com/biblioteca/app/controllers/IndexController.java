@@ -52,7 +52,7 @@ public class IndexController {
 	public String procesar(@Valid Usuario usuario,BindingResult result,Model model,SessionStatus status){
 		
 		validador.validate(usuario,result);
-		model.addAttribute("titulo","Resultado Form");
+		model.addAttribute("titulo","Sistema Web - Biblioteca G5");
 		if(result.hasErrors()) {
 			return "login";
 		}
@@ -83,9 +83,10 @@ public class IndexController {
 	private Prestamo prestamo;
 	
 	@RequestMapping("/prestamo")
-	public String prestamo(Model model) {
+	public String prestamo(Model model, Usuario usuario) {
 		
 		model.addAttribute("prestamo",prestamo);
+		model.addAttribute("usuario",usuario);
 		return "prestamo";
 	}
 	
@@ -94,8 +95,8 @@ public class IndexController {
 	private Ficha ficha;
 	
 	@RequestMapping("/ficha")
-	public String ficha(Model model) {
-		
+	public String ficha(Model model, Usuario usuario) {
+		model.addAttribute("usuario",usuario);
 		model.addAttribute("ficha",ficha);
 		return "ficha";
 	}

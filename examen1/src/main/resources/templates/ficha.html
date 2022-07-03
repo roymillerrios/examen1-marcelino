@@ -27,7 +27,7 @@
 	    </tr>
 	  </thead>
 	  <tbody>
-	    <tr th:each="item:${ficha.fichas}">
+	    <tr th:each="ficha:${ficha.fichas}">
 	      <td th:text="${ficha.libro.codigo}"></td>
 	      <td th:text="${ficha.libro.titulo}"></td>
 	      <td th:text="${ficha.libro.isbn}"></td>
