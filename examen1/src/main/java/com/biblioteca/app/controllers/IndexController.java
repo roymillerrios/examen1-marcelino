@@ -54,4 +54,16 @@ public class IndexController {
 		model.addAttribute("prestamo",prestamo);
 		return "prestamo";
 	}
+	
+	//Vista ficha
+	@Autowired
+	private Ficha ficha;
+	
+	@RequestMapping("/ficha")
+	public String ficha(Model model) {
+		
+		model.addAttribute("ficha",ficha);
+		return "ficha";
+	}
+
 }
