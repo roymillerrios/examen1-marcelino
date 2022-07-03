@@ -1,21 +1,11 @@
 package com.biblioteca.app.models;
 
-import java.util.List;
-
 public class Libro {
 
 	private String codigo;
 	private String titulo;
 	private String isbn;
-	private int nroPagina;
-	private List<Autor> listaAutores;
-	
-	public Libro(String codigo, String titulo, String isbn, int nroPagina) {
-		this.codigo = codigo;
-		this.titulo = titulo;
-		this.isbn = isbn;
-		this.nroPagina = nroPagina;
-	}
+	private Integer nroPagina;
 	public String getCodigo() {
 		return codigo;
 	}
@@ -34,18 +24,19 @@ public class Libro {
 	public void setIsbn(String isbn) {
 		this.isbn = isbn;
 	}
-	public int getNroPagina() {
+	public Integer getNroPagina() {
 		return nroPagina;
 	}
-	public void setNroPagina(int nroPagina) {
+	public void setNroPagina(Integer nroPagina) {
 		this.nroPagina = nroPagina;
 	}
-	public List<Autor> getListaAutores() {
-		return listaAutores;
-	}
-	public void setListaAutores(List<Autor> listaAutores) {
-		this.listaAutores = listaAutores;
+	public Libro(String codigo, String titulo, String isbn, Integer nroPagina) {
+		this.codigo = codigo;
+		this.titulo = titulo;
+		this.isbn = isbn;
+		this.nroPagina = nroPagina;
 	}
 	
 	
+
 }

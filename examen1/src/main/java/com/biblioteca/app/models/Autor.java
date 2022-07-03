@@ -1,36 +1,44 @@
 package com.biblioteca.app.models;
 
-import java.util.List;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
+@Component
 public class Autor {
 
+	@Value("${autor.codigo}")
 	private String codigo;
-	private String nombre;
-	private List<Libro> listaLibros;
 	
-	public Autor(String codigo, String nombre) {
-		this.codigo = codigo;
-		this.nombre = nombre;
+	@Value("${autor.nombre}")
+	private String nombre;
+	
+	public Autor(){
+		
 	}
+
 	public String getCodigo() {
 		return codigo;
 	}
+
 	public void setCodigo(String codigo) {
 		this.codigo = codigo;
 	}
+
 	public String getNombre() {
 		return nombre;
 	}
+
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	public List<Libro> getListaLibros() {
-		return listaLibros;
-	}
-	public void setListaLibros(List<Libro> listaLibros) {
-		this.listaLibros = listaLibros;
+
+	public Autor(String codigo, String nombre) {
+		super();
+		this.codigo = codigo;
+		this.nombre = nombre;
 	}
 	
 	
+
 	
 }
