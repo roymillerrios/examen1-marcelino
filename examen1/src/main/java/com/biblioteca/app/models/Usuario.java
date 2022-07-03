@@ -1,6 +1,7 @@
 package com.biblioteca.app.models;
 
 
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 
 import org.springframework.beans.factory.annotation.Value;
@@ -10,15 +11,17 @@ import org.springframework.stereotype.Component;
 @Component
 public class Usuario {
 	
-		@Value("${usuario.codigo}")
+	
 		private String codigo;
-		@Value("${usuario.nombre}")
+	
 		private String nombre;
-		@Value("${usuario.direccion}")
+
 		private String direccion;
-		@Value("${usuario.telefono}")
+	
 		private String telefono;
+		
 		@NotEmpty
+		@Email
 		private String email;
 		@NotEmpty
 		private String password;

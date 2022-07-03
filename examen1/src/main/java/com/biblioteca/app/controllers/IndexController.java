@@ -32,8 +32,7 @@ public class IndexController {
 	private String textoAutores;
 	
 
-	@Autowired
-	private UsuarioValidador validador;
+
 	
 
 	//Vista login
@@ -51,7 +50,7 @@ public class IndexController {
 	@PostMapping("/form")
 	public String procesar(@Valid Usuario usuario,BindingResult result,Model model,SessionStatus status){
 		
-		validador.validate(usuario,result);
+		
 		model.addAttribute("titulo","Sistema Web - Biblioteca G5");
 		if(result.hasErrors()) {
 			return "login";
