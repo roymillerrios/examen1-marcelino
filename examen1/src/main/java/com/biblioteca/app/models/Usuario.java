@@ -3,6 +3,7 @@ package com.biblioteca.app.models;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -23,7 +24,9 @@ public class Usuario {
 		@NotEmpty
 		@Email
 		private String email;
+		
 		@NotEmpty
+		@Size(min=4, max=12)
 		private String password;
 
 		
